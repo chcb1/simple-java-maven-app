@@ -1,12 +1,12 @@
 pipeline {
     agent any
     tools {
-        maven 'Maven 3.6.3'
+        maven 'Maven 3.14.0'
     }
     stages {
         stage('Install dependencies') {
             steps {
-                sh 'mvn dependency:resolve'
+                sh 'mvn clean install -DskipTests'
             }
         }
 
